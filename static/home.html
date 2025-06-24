@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div id="head"></div>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <div id="header"></div>
+    <link rel="manifest" href="manifest.json">
+    <script src="dexie.min.js"></script>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <div id="left"></div>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-lg-12 grid-margin-lg-0  grid-margin">
+              <div class="row m-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12 bg-white p-4 rounded">
+                    <h4 class="font-weight-bold text-dark">Bienvenue !</h4>
+                    <p id="currentDate" class="font-weight-normal  text-muted"></p>
+                </div>
+            </div>
+            </div>
+          </div>
+          <div class="row m-4">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12 bg-white p-4 rounded">
+                <h6 class="text-center">Commandes en attente de livraison</h6>
+                <div class="table-responsive" style="overflow-x: auto;">
+                  <table class="table-custom" id="go_datatable" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th>Station</th>
+                        <th>Numero Livraison</th>
+                        <th>Numero Commande</th>
+                        <th>Date Expedition</th>
+                        <th>Date Livraison</th>
+                        <th>Transporteur</th>
+                        <th>Camion</th>
+                        <th>Produit</th>
+                        <th>BL</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="livraisonBody">
+                      <!-- Les lignes seront injectées ici en JavaScript -->
+                    </tbody>
+                  </table>
+                  
+                </div> 
+            </div>
+        </div>
+        </div>
+        <!-- partial -->
+        <div id="footer"></div>
+      </div>
+      <!-- main-panel ends -->
+      
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $("#header").load("include/header.html");
+    $("#footer").load("include/footer.html");
+    $("#left").load("include/left.html");
+    $("#head").load("include/head.html");
+  </script>
+  <script>
+    // Obtenir la date courante
+    const today = new Date();
+  
+    // Options de formatage pour la date en français
+    const options = { 
+    day: 'numeric', 
+    month: 'long', 
+    year: 'numeric' 
+    };
+  
+    // Formatage de la date courante en français
+    const formattedDate = today.toLocaleDateString('fr-FR', options);
+  
+  
+      const timeOptions = { hour: '2-digit', minute: '2-digit' };
+  
+    const formattedTime = today.toLocaleTimeString('fr-FR', timeOptions);
+  
+    // Affichage de la date dans l'élément <p>
+    document.getElementById("currentDate").textContent = formattedDate +  ", " + formattedTime;
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      afficherLivraisons();
+    });
+  </script>
+</html>
+

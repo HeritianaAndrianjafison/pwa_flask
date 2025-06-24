@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0041)https://eplus.jovena.mg:8090/ep_acces.cfm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+	<link rel="shortcut icon" href="assets/images/icon.png" />
+	
+	<link rel="icon" type="image/png" href="assets/images/icon.png">
+
+    <title>Jovena - Suivi Livraison - Login</title>
+	
+    <link href="assets/asset/login/login.css" rel="stylesheet">
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/asset/login/bootstrap.modal.css" rel="stylesheet">
+    
+    <link href="assets/asset/login/jquery.loadmask.css" rel="stylesheet">
+
+	<link rel="manifest" href="manifest.json">
+   
+	<style>
+
+	body {
+		
+	}
+	.btn {
+		background: #ae4240 !important;
+		border-color: #8a4154 !important;
+	}
+	.btn:hover {
+		background: #cc3333 !important;
+		border-color: #a42924 !important;
+	}
+	.error{color:#FF0000;}
+	</style>
+    <!-- jQuery -->
+    <script src="assets/asset/login/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/asset/login/bootstrap.min.js"></script>
+	<script src="assets/asset/login/jquery.validate.min.js"></script>
+	<script src="assets/asset/login/jquery.loadmask.min.js"></script>
+   
+</head>
+
+<body cz-shortcut-listen="true">
+	<div id="ModalAlert" title="Alert" style="z-index:6000" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:4%;">×</button>
+					<h4 id="ModalAlertTittle" class="modal-title"></h4>
+				</div>
+				<div id="ModalAlertMsg" class="modal-body with-padding"></div>
+				<div class="form-actions modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" style="width:25% !important;">ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<!-- Bootstrap Core CSS -->
+		<link href="assets/asset/login/bootstrap.min.css" rel="stylesheet">
+        
+		<style>
+		body {
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			background-image:    -moz-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			background-image:     -ms-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			background-image:      -o-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			background-image:         gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			-webkit-background-clip: text;
+			background-clip: text;
+			padding-top: 50px;
+		}
+		@media screen and (max-width:767px){
+			#divCondEngagement{width:96% !important;margin:2% !important;}
+			#divLogin{width:96% !important;}
+		}
+		@media screen and (min-width:768px) and (max-width:992px){
+			#divCondEngagement{width:96% !important;margin:2% !important;}
+			#divLogin{width:96% !important;}
+			#imgLogo1{width:38% !important;}
+		}
+		@media screen and (min-width:993px) and (max-width:1024px){
+			#divCondEngagement{width:96% !important;margin:2% !important;}
+			#engagementTitle{text-align:left !important}
+			#imgLogo1{width:38% !important;}
+			
+		}
+		@media screen and (min-width:1025px){
+			#divCondEngagement{width:50% !important;}
+			#engagementTitle{text-align:left !important}
+			#imgLogo1{width:38% !important;}
+		}
+		.jovena {
+			  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			  background-image:    -moz-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			  background-image:     -ms-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			  background-image:      -o-gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			  background-image:         gradient(linear, left top, right top, color-stop(0, #cc3333), color-stop(1, #003399));
+			  color:transparent;
+			  -webkit-background-clip: text;
+			  background-clip: text;
+		}
+		</style>
+		
+		
+		<div id="divCondEngagement" class="login" style="margin: auto !important; display: none;">
+			<div class="login-screen">
+				<div class="app-title">
+					
+					<img id="imgLogo1" class="img-responsive img-center" src="asset/login/logo_jovena.jpg" alt="" style="margin:auto !important;width:100%;">
+					<h3 id="engagementTitle"><span class="jovena">termes d'engagement</span></h3>
+				</div>
+			</div>
+		</div>
+	
+		<div id="divLogin" class="login" style="margin: auto !important;">
+			<div class="login-screen">
+				<div class="app-title">
+					<img class="img-responsive img-center" src="assets/asset/login/logo_jovena.jpg" alt="LOGO" style="margin:auto !important;width:100%;">
+					<h1><span class="jovena">Suivi Livraison</span></h1>
+				</div>
+				<div class="login-form">
+					<form id="loginForm" role="form" >
+						<div class="control-group">
+							<input type="text" class="login-field required" value="admin" placeholder="nom d&#39;utilisateur" id="login_username" name="username" maxlength="50" style="width:100%;">
+							<label class="login-field-icon fui-user" for="login-name"></label>
+						</div>
+		
+						<div class="control-group">
+							<input type="password" class="login-field required" value="123" placeholder="mot de passe" name="login_password" id="login_password" maxlength="50" style="width:100%;">
+							<label class="login-field-icon fui-lock" for="login-pass"></label>
+						</div>
+					
+						<!--<a class="btn btn-primary btn-large btn-block" href="#">Se Connecter</a>-->
+						<!--<a class="login-link" href="#">Lost your password?</a>-->
+						<input type="submit"  value="se connecter" class="btn btn-primary btn-large btn-block bt_firefox"></input>
+					</form>	
+				</div>
+				<br>
+				<p color="red" id="message"></p>
+			</div>
+		</div>
+	
+</body>
+<script src="dexie.min.js"></script>
+<script>
+	if (localStorage.getItem("loggedInUser")) {
+		// Rediriger vers la page d'accueil si déjà connecté
+		window.location.href = "home.html";
+	}
+</script>
+  
+</html>
