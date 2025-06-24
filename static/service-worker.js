@@ -9,7 +9,6 @@ const urlsToCache = [
   '/register.js',
   '/login.html',
   '/home.html',
-  '/page_2.html',
   '/offline.html',
   '/dexie.min.js',
   '/icon-192.png',
