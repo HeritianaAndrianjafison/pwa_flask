@@ -1,4 +1,5 @@
 const CACHE_NAME = 'pwa-login-cache-v1';
+
 const urlsToCache = [
   '/',
   '/index.html',
@@ -12,13 +13,22 @@ const urlsToCache = [
   '/offline.html',
   '/dexie.min.js',
   '/icon-192.png',
-  '/assets/images/icon.png',
+  
+  // Includes manquants (résolus)
+  '/include/header.html',
+  '/include/footer.html',
+  '/include/left.html',
+  '/include/head.html',
+
+  // Assets login
   '/assets/asset/login/login.css',
   '/assets/asset/login/bootstrap.modal.css',
   '/assets/asset/login/jquery.loadmask.css',
   '/assets/asset/login/jquery.js',
   '/assets/asset/login/bootstrap.min.css',
   '/assets/asset/login/logo_jovena.jpg',
+
+  // Vendors
   '/assets/vendors/mdi/css/materialdesignicons.min.css',
   '/assets/vendors/feather/feather.css',
   '/assets/vendors/base/vendor.bundle.base.css',
@@ -26,10 +36,19 @@ const urlsToCache = [
   '/assets/vendors/font-awesome/css/font-awesome.min.css',
   '/assets/vendors/jquery-bar-rating/fontawesome-stars-o.css',
   '/assets/vendors/jquery-bar-rating/fontawesome-stars.css',
+
+  // Styles and images
   '/assets/css/style.css',
+  '/assets/images/icon.png',
   '/assets/images/logo/logo.png',
-  '/assets/images/faces/heritiana.jpg'
+  '/assets/images/faces/heritiana.jpg',
+
+  // Ajout possible : fonts souvent utilisées dans erreurs font fallback
+  '/assets/fonts/karla/Karla-Bold.woff2',
+  '/assets/fonts/karla/Karla-Regular.woff2',
+  '/assets/vendors/feather/fonts/feather-webfont.woff',
 ];
+
 
 
 
